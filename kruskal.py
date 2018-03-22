@@ -7,16 +7,14 @@ G = nx.Graph()
 disjoint_set = DisjointSet(['a', 'b', 'c', 'd'])
 node_set = disjoint_set.get()
 #  GRAFO DI INPUT
-i = 0
-j = 2
-for n in node_set:
-    G.add_node(n[0], pos=(i, j))
-    j = j-i
-    i = i+1
+G.add_node('a', pos=(0, 1), key=0)
+G.add_node('b', pos=(2, 1), key=0)
+G.add_node('c', pos=(1, 0), key=0)
+G.add_node('d', pos=(1, 2), key=0)
 
 G.add_edge('a', 'b', weight=2)
 G.add_edge('a', 'c', weight=10)
-G.add_edge('b', 'c', weight=9)
+G.add_edge('b', 'c', weight=90)
 G.add_edge('b', 'd', weight=1)
 G.add_edge('d', 'a', weight=3)
 edges = nx.get_edge_attributes(G, 'weight')
